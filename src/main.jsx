@@ -6,7 +6,6 @@ import Paragrafo from './paragrafo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Paragrafo />
     <App />
   </StrictMode>,
 )
