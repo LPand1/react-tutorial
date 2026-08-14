@@ -6,7 +6,9 @@ const TarefasItem = ({ tarefa, onEditTarefa, onDeleteTarefa }) => {
 
     const handleEdit = () => {
         if (isEditing) {
-            setIsEditing(false);
+            if (novoTexto.trim()) {
+                onEditTarefa(tarefa.id, novoTexto);
+            }
         } else {
             setIsEditing(true);
         }
