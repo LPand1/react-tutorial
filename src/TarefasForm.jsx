@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const TarefasForm = ({ onAddTarefa }) => {
-    const [tarefa, setTarefa] = useState('');
+    const [tarefa, setTarefas] = useState('');
 
     const handleSubmit = (e) => {
         // Evita que o form seja enviado
@@ -9,13 +9,13 @@ const TarefasForm = ({ onAddTarefa }) => {
 
         if (tarefa.trim()) {
             onAddTarefa(tarefa.trim());
-            setTarefa('');
+            setTarefas('');
         }
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" value={tarefa} placeholder="Digite sua tarefa" onChange={(e) => { setTarefa(e.target.value) }}/>
+            <input type="text" value={tarefa} placeholder="Digite sua tarefa" onChange={(e) => { setTarefas(e.target.value) }}/>
             <button type="submit">Adicionar</button>
         </form>
     );
