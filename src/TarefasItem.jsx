@@ -19,7 +19,13 @@ const TarefasItem = ({ tarefa, onEditTarefa, onDeleteTarefa }) => {
     return (
         <li>
             { isEditing ? (<input type="text" value={novoTexto}  
-            onChange={(e) => {setNovoTexto(e.target.value)}}/>) : (<>{tarefa.texto}</>) }
+            onChange={(e) => {setNovoTexto(e.target.value)}} 
+            onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    handleEdit();
+                }
+            }}
+            />) : (<>{tarefa.texto}</>) }
             <button onClick={handleEdit}>🪶</button>
             <button onClick={handleDelete}>❌</button>
         </li>
