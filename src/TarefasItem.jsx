@@ -1,16 +1,29 @@
-<<<<<<< HEAD
-const TarefasItem = ({ tarefa }) => {
+import { useState } from "react";
+
+const TarefasItem = ({ tarefa, onEditTarefa, onDeleteTarefa }) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [novoTexto, setNovoTexto] = useState(tarefa.texto);
+
+    const handleEdit = () => {
+        if (isEditing) {
+            setIsEditing(false);
+        } else {
+            setIsEditing(true);
+        }
+    }
+
+    const handleDelete = () => {
+        onDeleteTarefa(tarefa.id);
+    }
+
     return (
-        <li>{ tarefa.texto }</li>
+        <li>
+            { isEditing ? (<input type="text" value={novoTexto}  
+            onChange={(e) => {setNovoTexto(e.target.value)}}/>) : (<>{tarefa.texto}</>) }
+            <button onClick={handleEdit}>🪶</button>
+            <button onClick={handleDelete}>❌</button>
+        </li>
     );
 }
 
-=======
-const TarefasItem = ({ tarefa }) => {
-    return (
-        <li>{ tarefa.texto }</li>
-    );
-}
-
->>>>>>> bad8a54 (Commit teste)
 export default TarefasItem;
