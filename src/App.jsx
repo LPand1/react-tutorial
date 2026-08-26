@@ -2,12 +2,12 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import Paragrafo from './paragrafo'
-import CaixaTexto from './CaixaTexto'
 import './App.css'
+import Paragrafo from './Paragrafo'
+import CaixaTexto from './CaixaTexto'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [num, setNum] = useState(1)
 
   return (
     <>
@@ -18,16 +18,16 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>Comece!</h1>
         </div>
+        
+        <CaixaTexto />
 
         <Paragrafo nome="Fulano" />
         <Paragrafo nome="Beltrano" />
 
-        <CaixaTexto />
-      </section>
 
-      <div className="ticks"></div>
+      </section>
 
       <div className="ticks"></div>
       <section id="spacer"></section>

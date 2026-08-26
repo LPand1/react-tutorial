@@ -1,20 +1,19 @@
 import { useState } from "react"
 
 const CaixaTexto = () => {
-    const [texto, setTexto] = useState('yessir');
+    const [texto, setTexto] = useState('');
 
     const gerenciaTexto = (event) => {
-        setTexto(event.target.value) // pega o valor do campo que disparou o evento
+        setTexto(event.target.value)
     }
 
     return (
         <div>
             <h3>Input</h3>
             <input type="text" value={texto} onInput={gerenciaTexto} />
-            <br /> <br />
-            <p>Você digitou: {texto} </p>
+            <p>Você digitou: {texto}</p>
         </div>
-    )
+    );
 }
 
 export default CaixaTexto
