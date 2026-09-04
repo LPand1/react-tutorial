@@ -1,4 +1,23 @@
-body.dark {
+.dark {
     background-color: black;
-    color: whitesmoke;
+    color: gainsboro;
+}
+
+button.dark {
+    background-color: gainsboro;
+    color: black;
+}
+
+.light {
+    background-color: gainsboro;
+    color: black;
+}
+
+button.light {
+    background-color: black;
+    color: gainsboro;
+}
+
+h2.light {
+    color: black;
 }
